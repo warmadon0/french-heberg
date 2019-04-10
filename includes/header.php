@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from nationsglory.fr/partners by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Apr 2019 16:42:37 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
   <meta charset="UTF-8">
   <link href='http://fonts.googleapis.com/css?family=Ubuntu|Lato' rel='stylesheet' type='text/css'>
