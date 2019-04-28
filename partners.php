@@ -8,7 +8,7 @@ require('includes/informations.php');
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Acceuil | French-Heberg</title>
+	<title>Partenaires | Héberg-FR</title>
 
 </head>
 <body>

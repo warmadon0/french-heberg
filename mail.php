@@ -8,7 +8,7 @@ require('includes/contact.php');
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Contact | French-Heberg</title>
+	<title>Contact | Héberg-FR</title>
 
 </head>
 <body>
@@ -17,7 +17,7 @@ require('includes/contact.php');
 <center>
 <form id="contact" method="post" action="mail.php">
 	<fieldset><legend>Contact Support : </legend>
-		<p><label for="nom">Pseudonyme : </label><input type="text" id="nom" name="nom" /></p>
+		<p><label for="nom">Pseudonyme : </label><?php echo "<input type='text' id='nom' name='nom' value='" . $_COOKIE['pseudo'] . "' />"; ?></p>
 		<p><label for="email">Email : </label><input type="text" id="email" name="email" /></p>
 		<p><label for="objet">Objet De l'e-mail : </label><input type="text" id="objet" name="objet" /></p>
 		<p><label for="message">Message : </label><textarea id="message" name="message" cols="30" rows="10"></textarea></p>

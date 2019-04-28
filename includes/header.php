@@ -1,3 +1,8 @@
+
+<?php $bdd = new PDO('mysql:host=localhost;dbname=french_u5xk', 'french_u5xk', 'Paul44570'); ?>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+</script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,28 +67,56 @@
               <div class="clear"></div>
                          <ul class="navbar-nav navbar-dark ml-auto">
  <li class="nav-item">
-          <a href="index.php" class="nav-link">Accueil</a>
+          <a href="redirection.php?nom=index" class="nav-link">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link dropdown">Communauté</a>
           <div class="dropdown-menu">
-            <a href="faq.php" class="dropdown-item">
+            <a href="redirection.php?nom=faq" class="dropdown-item">
               <i class="icon material-icons">question_answer</i>
               <span>F.A.Q.</span>
             </a>
             <span class="dropdown-separator"></span>
-            <a href="staff.php" class="dropdown-item">L'équipe</a>
-            <a href="partners.php" class="dropdown-item">Partenaires</a>
+            <a href="redirection.php?nom=staff" class="dropdown-item">L'équipe</a>
+            <a href="redirection.php?nom=partners" class="dropdown-item">Partenaires</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="mail.php" class="nav-link">Contact</a>
+          <a href="redirection.php?nom=mail" class="nav-link">Contact</a>
         </li>
         <li class="nav-item">
-                  <a href="shop.php" class="btn">
+                  <a href="redirection.php?nom=shop" class="btn">
             <i class="nav-item-icon material-icons">shopping_cart</i>
             <span>Boutique</span>
           </a>
+        </li>
+                <li class="nav-item">
+<?php  if($_COOKIE['id'] >= 1){
+         echo "<a class='nav-link dropdown'>Espace Membres</a>";
+         echo "<div class='dropdown-menu'>"; 
+
+           echo "<a href='profil.php?id=";
+           echo $_COOKIE['id'];  
+           echo "' class='dropdown-item'>";
+                     echo "<span>Mon Profil</span>";
+                     echo "</a>";
+ echo "<a href='editionprofil.php' class='dropdown-item'>";
+                     echo "<span>Profil Edit</span>";
+                     echo "</a>";
+                                                       echo '<span class="dropdown-separator"></span>';
+             echo '<a href="deconnexion.php" class="dropdown-item">Deconnexion</a>';
+}else {
+           echo "<a class='nav-link dropdown'>Connexion / Inscription</a>";
+         echo "<div class='dropdown-menu'>"; 
+ echo "<a href='Inscriptions.php' class='dropdown-item'>";
+                     echo "<span>Inscription</span>";
+                     echo "</a>";
+                                  echo '<span class="dropdown-separator"></span>';
+             echo '<a href="Connexion.php" class="dropdown-item">Connexion</a>';
+} ?>
+                  
+
+          </div>
         </li>
  </ul>          </div>
         </div>

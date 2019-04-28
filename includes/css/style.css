@@ -16,6 +16,18 @@ legend {
  color:#DF3F3F;
  font-weight:bold
  }
+g {
+ color:#FF0000;
+ font-weight:bold
+ }
+q {
+ color:#0026FF;
+ font-weight:bold
+ }
+u {
+ color:#4800FF;
+ font-weight:bold
+ }
 label {
  margin-top:10px;
  display:block;

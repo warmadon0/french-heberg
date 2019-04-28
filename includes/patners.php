@@ -34,7 +34,7 @@
     <hr/>
     <p>French-Heberg prête une attention toute particulière aux médias, que vous soyez Youtuber ou bien même Streamer, vous trouverez forcement votre place au sein de nos services !</p><BR/>
     <p>C'est dans cette idée que nous proposons, un système unique permettant à n'importe qui de participer à l'évolution de notre communauté.</p><BR/>
-    <p>En effet, notre système de <b>"partenariat"</b> propose deux solutions pour les youtubers:</p><BR/>
+    <p>En effet, notre système de <b>"partenariat"</b> propose plusieurs solutions pour les youtubers:</p><BR/>
 
   </p>
 
@@ -65,25 +65,33 @@
 	<thead>
 		<tr>
 			<th></th>
-			<th>Solution 1 : Partenaire</th>
-			<th>Solution 2 : Sponsoring</th>
+			<th>Solution 1 : Mini-Youtuber</th>
+			<th>Solution 2 : Youtuber</th>
+			<th>Solution 3 : Famous</th>
+			<th>Solution 4 : Sponsoring</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr class="ok">
 			<td class="droiteg">Minimum d'abonnés</td>
-			<td>5.000</td>
+			<td>100</td>
+			<td>500</td>
 			<td>1.000</td>
+			<td>1.500</td>
 		</tr>
 		<tr>
 			<td class="droiteg">Contrainte une vidéo avant demande</td>
-			<td><i class="fa fa-square-o">Nan</i></td>
+			<td><i class="fa fa-square-o">Oui</i></td>
 			<td><i class="fa fa-check-square-o">Oui</i></td>
+			<td><i class="fa fa-check-square-o">Oui</i></td>
+			<td><i class="fa fa-check-square-o">Nan</i></td>
 		</tr>
 		<tr style="border-bottom:1px solid #C0C0C0;" >
 			<td class="droiteg">Prise de contact</td>
-			<td>hebergfrench@gmail.com</td>
 			<td>Teamspeak ou Discord</td>
+			<td>hebergfrench@gmail.com</td>
+			<td>hebergfrench@gmail.com</td>
+			<td>hebergfrench@gmail.com</td>
 		</tr>
 
 		<tbody>

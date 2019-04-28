@@ -1,19 +1,45 @@
 <link href="includes/css/style.css" rel="stylesheet" media="all" type="text/css"> 
-
+<?php
+session_start(); 
+$bdd = new PDO('mysql:host=localhost;dbname=french_u5xk', 'french_u5xk', 'Paul44570');
+if(isset($_POST['formconnexion'])) {
+   $mailconnect = htmlspecialchars($_POST['mailconnect']);
+   $mdpconnect = sha1($_POST['mdpconnect']);
+   if(!empty($mailconnect) AND !empty($mdpconnect)) {
+      $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND motdepasse = ?");
+      $requser->execute(array($mailconnect, $mdpconnect));
+      $userexist = $requser->rowCount();
+      if($userexist == 1) {
+         $userinfo = $requser->fetch();
+         $_SESSION['id'] = $userinfo['id'];
+         $_SESSION['pseudo'] = $userinfo['pseudo'];
+                  $_SESSION['nom'] = $userinfo['nom'];
+                           $_SESSION['prenom'] = $userinfo['prenom'];
+         $_SESSION['mail'] = $userinfo['mail'];
+         header("Location: profil.php?id=".$_SESSION['id']);
+setCookie('pseudo',$userinfo['pseudo'],time()+24*3600);
+setCookie('nom',$userinfo['nom'],time()+24*3600);
+setCookie('prenom',$userinfo['prenom'],time()+24*3600);
+setCookie('mail',$userinfo['mail'],time()+24*3600);
+setCookie('id',$userinfo['id'],time()+24*3600);
+      } else {
+         $erreur = "Mauvais mail ou mot de passe !";
+      }
+   } else {
+      $erreur = "Tous les champs doivent être complétés !";
+   }
+}
+?>
 <?php
 require('includes/header.php');
 require('includes/informations.php');
 ?>
-
-<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title>Acceuil | Héberg-FR</title>
-
-</head>
-<body>
-
+   <head>
+      <title>Connexion | Héberg-FR</title>
+      <meta charset="utf-8">
+   </head>
+   <body>
     <section class="section section-hero section-scrim-25 section-100vh" style="background: url(../www.nationsglory.fr/theme/site/img/header_hd_sombre.png) rgb(0, 0, 0);background-size: cover;background-position-x: -500px;">
       <div class="hero-top"></div>
       <div class="hero-container container">
@@ -36,7 +62,7 @@ require('includes/informations.php');
                   <div class="clear"></div>
                   <div class="spacer"></div>
                   <div class="flex-row align-items-center space-between">
-                    <a href="Forget.php" class="black-50">Mot de passe oublié ?</a>
+                     <a href="Forget.php" class="black-50">Mot de passe oublié ?</a>
                     <button type="submit" name="formconnexion" class="btn btn-grey">CONNEXION</button>
                   </div>
                 </form>
@@ -59,10 +85,12 @@ require('includes/informations.php');
         </div>
       </div>
     </section>
-
-
-
-
+         <?php
+         if(isset($erreur)) {
+            echo '<font color="red">'.$erreur."</font>";
+         }
+         ?>
+      </div>
                                               </div>
 <?php
 require('includes/footer.php');?>
